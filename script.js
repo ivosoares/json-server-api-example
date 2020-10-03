@@ -1,4 +1,4 @@
-const url = ' http://localhost:3000/data';
+const url = 'http://localhost:3000/data';
 const divResult = document.getElementById('divResult');
 
 async function sendName(event) {
@@ -31,6 +31,53 @@ async function sendName(event) {
     getNames();
 }
 
+async function deleteName(id) {
+    const url_delete = `http://localhost:3000/data/${id}`;
+
+    const user = {
+        first_name: '',
+        last_name: '',
+        job_title: ''
+    };
+
+    const request = new Request(url_delete, {
+        method: 'DELETE',
+        body: JSON.stringify(user),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    });
+    const response = await fetch(request);
+    const result = await response.json();
+
+    divResult.innerHTML = '';
+    getNames();
+}
+
+async function editName(id) {
+    const url_edit = `http://localhost:3000/data/${id}`;
+
+    const editUser = {
+        first_name: 'Paulo',
+        last_name: 'Santos Soares',
+        job_title: 'Programador'
+    };
+
+    const request = new Request(url_edit, {
+        method: 'PUT',
+        body: JSON.stringify(editUser),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    });
+
+    const response = await fetch(request);
+    const result = await response.json();
+
+    divResult.innerHTML = '';
+    getNames();
+}
+
 async function getNames() {
     const response = await fetch(url);
     const result = await response.json();
@@ -42,8 +89,12 @@ async function getNames() {
                     <p>${element.first_name}</p>
                     <p>${element.last_name}</p>
                     <p>${element.job_title}</p>
+                    <button onclick="editName(${element.id})">Editar</button>
+                    <button onclick="deleteName(${element.id})">Deletar</button>
                 </li>
             `
         )
     });
 };
+
+getNames();

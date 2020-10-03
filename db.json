@@ -1,34 +1,28 @@
 {
   "data": [
     {
-      "first_name": "Ivonaldo",
-      "last_name": "Soares",
-      "job_title": "Instrutor",
-      "id": 1
-    },
-    {
-      "first_name": "Leonardo",
-      "last_name": "Carvalho",
-      "job_title": "Instrutor",
-      "id": 2
-    },
-    {
-      "first_name": "Jane",
-      "last_name": "Doe",
-      "job_title": "Fotografa",
-      "id": 3
-    },
-    {
       "first_name": "Joao",
       "last_name": "Doe",
       "job_title": "Verdureiro",
       "id": 4
     },
     {
-      "first_name": "maria",
-      "last_name": "silva",
-      "job_title": "vendedora",
-      "id": 5
+      "first_name": "Paulo",
+      "last_name": "Santos Soares",
+      "job_title": "Programador",
+      "id": 7
+    },
+    {
+      "first_name": "Maria",
+      "last_name": "Silva",
+      "job_title": "CEO",
+      "id": 8
+    },
+    {
+      "first_name": "Joana",
+      "last_name": "Santos",
+      "job_title": "Designer",
+      "id": 9
     }
   ]
 }
